@@ -195,3 +195,31 @@ drummer.myAge = 27;
 drummer.instrument = "Drums";
 console.log("Age:  " + drummer.myAge);
 console.log("Instrument:  " + drummer.instrument);
+
+ ****************************************************************************************************
+
+/**
+ Spread operator: 
+ Copy array or object
+ Spread operator can be the first element
+ ****************************************************************************************************
+ */
+
+var weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+var days = [...weekdays, "Sat", "Sun"]; 
+console.log(days) // ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+/**
+ Rest operator: 
+ collects all remaining elements into an array
+ rest parameter needs to be the last to collect the rest elements.
+ ****************************************************************************************************
+ */
+
+var days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+const [sat, sun, ...weekdays] = days;
+console.log(sat); // "Sat"
+console.log(sun); // "Sun"
+console.log(weekdays); // ["Mon", "Tue", "Wed", "Thu", "Fri"]
+
+
