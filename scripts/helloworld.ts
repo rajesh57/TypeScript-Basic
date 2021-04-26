@@ -8,6 +8,26 @@
  * Let declation -  we can create WITHOUT Initilizations.
  * Const declation -  Always Initlize the value. Once assigned we can't reassign
  * 
+ 
+  let - used only block scope
+  
+  const -  used only block scope
+  
+   ex:  
+     if (myAge >20) {
+        let isOldAge = true
+	console.log("isOldAge==",isOldAge); - isOldAge only access here not outside
+     }
+     
+  
+  var -  used for global scope
+  
+       if (myAge >20) {
+        var isOldAge = true
+     }
+     	console.log("isOldAge==",isOldAge); isOldAge access from outside block
+
+  
  * Use of Types : 1.Static Types checking. 
                   2. Accurate Intelligence Ex : showing properties of string and number 
  * ****************************************************************************************************
