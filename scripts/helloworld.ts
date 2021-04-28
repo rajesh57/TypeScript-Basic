@@ -242,4 +242,35 @@ console.log(sat); // "Sat"
 console.log(sun); // "Sun"
 console.log(weekdays); // ["Mon", "Tue", "Wed", "Thu", "Fri"]
 
+//====================Nullish Coalescing=================================
+
+const myName = undefined;
+const final = myName ?? 'Rajesh';
+console.log("final value===",final);
+
+//=====================Promise==========================
+
+const promise1 = new Promise( (resolve, reject)=> {
+   setTimeout(() => {
+    resolve('All done');
+   }, 2000)
+   reject('')
+})
+
+// add Promise Type 
+const promise2: Promise<string> = new Promise( (resolve, reject)=> {
+   setTimeout(() => {
+    resolve('All done');
+   }, 2000)
+   reject('')
+})
+promise2.then(data => {
+data.split( ' ')
+})
+
+//=======================Generics==============================
+const names = ['rajesh', 'kumar'];  // string[]
+
+const namesHere : Array<string> = [];
+
 
