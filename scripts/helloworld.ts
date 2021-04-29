@@ -273,4 +273,59 @@ const names = ['rajesh', 'kumar'];  // string[]
 
 const namesHere : Array<string> = [];
 
+function funName1 (name1: string) : string {
+    return name1;
+}
+function funName2 (name2: number) : number {
+    return name2;
+}
+
+// T - its a generic it acceept any kind of data types.
+
+// Generics - Sigle type
+function myFun <T> (name:T): T {
+    return name;
+}
+console.log("myapp ===", myFun('123'));
+console.log("myapp ===", myFun('rajesh'));
+
+function dmeoFun(arg1:string, arg2: number) {
+    return arg1+ arg2;
+}
+
+// Generics -Many Type
+function demoGenericFun<T, U> (arg1: T, arg2: U) {
+    return `I am ${arg1} ${arg2}`;
+}
+console.log("demoGenericFun==",demoGenericFun("rajesh", "kumar"));
+console.log("demoGenericFun==",demoGenericFun("rajesh", 123));
+console.log("demoGenericFun==",demoGenericFun("rajesh", true));
+
+
+// Normal Type declated - Object 
+function myMergeFun (objA: object, objB: object) {
+   return Object.assign(objA,objB);
+}
+const megeObj = myMergeFun({name:"rajesh"}, {job: "IT"})
+console.log("megeObj===",megeObj);
+
+// Generics - Object 
+function myMergeFun1<T, U> (objA: T, objB: U) {
+   return Object.assign(objA,objB);
+}
+
+const megeObj1 = myMergeFun1({name:"rajesh", lastName:'kumar'}, {job: "IT"})
+console.log("megeObj1===",megeObj1);
+console.log("megeObj1 access name===",megeObj1.name);
+
+
+
+//=================  Generics Type Constraints =================
+// Restric type using Generics Type constraint
+// extends keyward to restrict type for this case only acceept object type
+function myMergeFunConstaint<T extends object, U extends object>  (objA: T, objB: U) {
+   return Object.assign(objA,objB);
+}
+// If we pass other than object type it shows compile time error
+// const megeObj3 = myMergeFunConstaint({name:"rajesh", lastName:'kumar'}, 30) 
 
