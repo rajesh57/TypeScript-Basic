@@ -334,3 +334,92 @@ function myMergeFunConstaint<T extends object, U extends object>  (objA: T, objB
 // If we pass other than object type it shows compile time error
 // const megeObj3 = myMergeFunConstaint({name:"rajesh", lastName:'kumar'}, 30) 
 
+//============== Array Methods ================================
+
+/* 1. concat()
+Method returns a new array comprised of this array joined with two or more arrays.
+*/
+const array1 = ["1","2"];
+const array2 = ["a", "b"];
+const finalArray = array1.concat(array2);
+
+
+/* 2. every()
+Method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value
+*/
+// checking each element in the array if match the codition (all element) return boolean true. If any of then fail to match return false.
+const array3 = [10, 20, 30, 40];
+
+const isCheckThreshold = (testVal: number) => {
+    return testVal > 21
+}
+const isArrayval : boolean = array3.every(isCheckThreshold);
+console.log("isArrayval==",isArrayval);
+
+
+/* 3. filter()
+Method creates a new array with all elements that pass the test implemented by the provided function.
+*/
+// checking each element in the array if match the codition (all element) return new array
+const array4 = [10, 20, 30, 40];
+
+const isCheckMyThreshold = (testVal: number) => {
+    return testVal > 21
+}
+const finalNewArray : number[] = array4.filter(isCheckThreshold);
+console.log("finalNewArray==",finalNewArray);
+
+
+/* 4. forEach()
+method calls a function for each element in the array.
+*/
+  
+  array3.forEach((myElement)=> {
+    console.log("myElement==",myElement);
+  })
+
+  /* 5. indexOf() -  start from first 
+method retuns the index of element in the array
+*/
+
+console.log("array index form first===",array3.indexOf(20));
+
+  /* 6. lastIndexOf() - start from last 
+ method retuns the index of element in the array
+*/
+
+console.log("array index from last===",array3.lastIndexOf(30));
+
+ /* 7. join()
+method joins all the elements of an array into a string.
+*/
+
+console.log("array index===",array3.join(","));
+
+
+ /* 8. map()
+method creates a new array with the results of calling a provided function on every element in this array.
+*/
+
+const myArray1 = [1,2,2,3,4,5];
+const testArr = myArray1.map((myVal)=> {
+return myVal*2;
+});
+
+console.log("testArr===",testArr);
+
+
+ /* 9. pop()
+method removes the last element from an array and returns that element.
+*/
+const removeLasEle= myArray1.pop();
+
+
+ /* 10. push()
+method appends the given element(s) in the last of the array and returns the length of the new array
+*/
+const addLastEle= myArray1.push(100);
+console.log("addLasEle===",addLastEle);
+console.log("myArray1===",myArray1);
+
+
