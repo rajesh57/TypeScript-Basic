@@ -423,3 +423,130 @@ console.log("addLasEle===",addLastEle);
 console.log("myArray1===",myArray1);
 
 
+
+ /* 11. reduce()
+method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+*/
+ 
+ // Use case:Sum all the values of an array
+ /* this is our initial value i.e. the starting point*/
+const initialValue1 = 0;
+/* numbers array */
+const numbers = [5, 10, 15];
+/* reducer method that takes in the accumulator and next item */
+const reducer = (accumulator: any, item:any) => {
+  return accumulator + item;
+};
+/* we give the reduce method our reducer function
+  and our initial value */
+const myTotal = numbers.reduce(reducer, initialValue1)
+
+
+
+ const stdResult1 =  [67, 90, 100, 37, 60];
+ const total = stdResult1.reduce((accumulator, currntVal)=> {
+    return accumulator + currntVal;
+ })
+ console.log("totel===",total);
+
+ // Use case:Sum of values in an object array
+  const stdResult2 =  [
+    { subject: 'Maths', marks: 78 },
+    { subject: 'Physics', marks: 80 },
+    { subject: 'Chemistry', marks: 93 }
+  ];
+
+const total2 = stdResult2.reduce((accu, curVal) => {
+   return accu + curVal.marks;
+},0)
+
+ console.log("total2===",total2);
+
+//Use case:Flatten an array of arrays
+
+const twoDArr = [ [1,2], [3,4], [5,6], [7,8] , [9,10] ];
+const oneDArr = twoDArr.reduce((accumulator, currentValue) => accumulator.concat(currentValue));
+ console.log("oneDArr===",oneDArr);
+
+//Use case:Grouping objects by a property
+
+const result = [
+    {subject: 'Physics', marks: 41},
+    {subject: 'Chemistry', marks: 59},
+    {subject: 'Pure Maths', marks: 36},
+    {subject: 'Applied Maths', marks: 90},
+    {subject: 'English', marks: 64},
+];
+
+let initialValue = {
+    pass: [], 
+    fail: []
+}
+
+const groupedResult = result.reduce((accumulator, current) => {
+    (current.marks>=50) ? accumulator.pass.push(current) : accumulator.fail.push(current);
+    return accumulator;
+}, initialValue);
+
+console.log(groupedResult);
+
+
+ /* 12. reverse()
+method reverses the element of an array
+*/
+array1.reverse();
+
+
+ /* 13. shift()
+method removes the first element from an array and returns that element.
+*/
+
+array4.shift();
+
+
+ /* 14. slice()
+Extracts a section of an array and returns a new array.
+*/
+//array.slice( begin [,end] );
+array4.slice(1,3);
+
+
+ /* 15. some()
+method tests whether some element in the array passes the test implemented by the provided function.
+// checking any one of element in the array if match the codition (all element) return boolean true. If any of then fail to match return false.
+*/
+const finalNewArray1 : boolean = array4.some(isCheckThreshold);
+
+
+ /* 16. splice()
+method changes the content of an array, adding new elements while removing old elements.
+*/
+//array.splice(index, howMany, [element1][, ..., elementN]);
+
+let arr = ["orange", "mango", "banana", "sugar", "tea"];  
+let removed = arr.splice(2, 0, "water");  
+
+ /* 17. unshift()
+unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+*/
+//array.unshift( element1, ..., elementN );
+
+let arr5 = new Array("orange", "mango", "banana", "sugar"); 
+let newVal = arr.unshift("water"); 
+
+ /* 18. includes()
+method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+*/
+
+const arrayMy = [1, 2, 3];
+console.log(arrayMy.includes(2));
+// expected output: true
+
+const pets = ['cat', 'dog', 'bat'];
+console.log(pets.includes('cat'));
+// expected output: true
+
+
+
+
+
