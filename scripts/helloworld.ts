@@ -230,17 +230,27 @@ var days = [...weekdays, "Sat", "Sun"];
 console.log(days) // ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 /**
- Rest operator: 
+ Rest parameter: 
  collects all remaining elements into an array
  rest parameter needs to be the last to collect the rest elements.
  ****************************************************************************************************
  */
+function myFunction(name1:string, name2:string, ...name3:string[]): void {
+console.log(name1);
+console.log(name2);
+console.log(name3);
+console.log(name3.length);
+}
 
-var days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
-const [sat, sun, ...weekdays] = days;
-console.log(sat); // "Sat"
-console.log(sun); // "Sun"
-console.log(weekdays); // ["Mon", "Tue", "Wed", "Thu", "Fri"]
+myFunction("rajesh","kumar","test","test2", "test3");
+
+function myTestFunc(...args:number[]): void {
+    let finalVal = 0;
+    args.forEach((value) => {
+      finalVal = value + 5;
+    })
+}
+myTestFunc(10,20,30);
 
 //====================Nullish Coalescing=================================
 
