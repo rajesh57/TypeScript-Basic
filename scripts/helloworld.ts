@@ -235,6 +235,18 @@ console.log(days) // ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
  rest parameter needs to be the last to collect the rest elements.
  ****************************************************************************************************
  */
+
+ rest operator puts the rest of some specific user-supplied values into a JavaScript array
+ 
+function myTestFun(firstName: string, lastName:string, ...otherInfo):void {
+	return otherInfo
+}
+
+myTestFun('rajesh', 'kumar', 'software', 'development', 'mobile');
+
+output: ['software', 'development', 'mobile']
+
+
 function myFunction(name1:string, name2:string, ...name3:string[]): void {
 console.log(name1);
 console.log(name2);
